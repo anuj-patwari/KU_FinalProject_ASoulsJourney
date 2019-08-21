@@ -91,7 +91,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            if(prepPhase == true)
+            {
+                EndPrepPhase();
+                print("prep ended");
+            }
+
+            if (prepPhase == false)
+            {
+                StartPrepPhase();
+                print("prep started");
+            }
+        }
     }
 
     public void EndPrepPhase()
