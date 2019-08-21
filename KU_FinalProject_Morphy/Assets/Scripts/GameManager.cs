@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(prepPhase);
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             if(prepPhase == true)
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
                 print("prep ended");
             }
 
-            if (prepPhase == false)
+            else
             {
                 StartPrepPhase();
                 print("prep started");
@@ -109,16 +110,17 @@ public class GameManager : MonoBehaviour
 
     public void EndPrepPhase()
     {
-        prepPhase = false;
+        TogglePrep();
         inventory.SetActive(false);
         startButton.SetActive(false);
         prepPhaseButton.SetActive(true);
         PrepPhaseEnded.Invoke();
+        print("xxx");
     }
 
     public void StartPrepPhase()
     {
-        prepPhase = true;
+        TogglePrep();
         inventory.SetActive(true);
         startButton.SetActive(true);
         prepPhaseButton.SetActive(false);
@@ -141,5 +143,10 @@ public class GameManager : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void TogglePrep()
+    {
+        prepPhase = !prepPhase;
     }
 }

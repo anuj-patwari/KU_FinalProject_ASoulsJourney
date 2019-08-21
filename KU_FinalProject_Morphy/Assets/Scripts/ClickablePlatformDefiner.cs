@@ -24,11 +24,11 @@ public class ClickablePlatformDefiner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.prepPhase = true && gm.platformIDNumber != 0)
+        if (gm.prepPhase == true && gm.platformIDNumber != 0)
         {
             gameObject.GetComponent<Animator>().enabled = true;
         }
-        else if (gm.prepPhase = true && gm.platformIDNumber == 0)
+        else if (gm.prepPhase == true && gm.platformIDNumber == 0)
         {
             gameObject.GetComponent<Animator>().enabled = false;
         }
