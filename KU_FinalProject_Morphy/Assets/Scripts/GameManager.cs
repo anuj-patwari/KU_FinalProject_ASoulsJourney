@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
     [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject placeAllPlatformsText;                                          //Place all platforms Text.
 
+    public bool paused;                                                                         //Checking if the game is Paused.
 
     InventoryCountDefiner invCount;
     [Header("Inventory Counters")]
@@ -83,6 +86,13 @@ public class GameManager : MonoBehaviour
         goal = FindObjectOfType<Goal>();
         goal.getKeyText = invCount.getKeyText;
         goal.getKeyText.GetComponent<Image>().enabled = false;
+
+        placeAllPlatformsText = invCount.placeAllPlatformsText;                                         //Setting the Text of placing all platforms.
+        placeAllPlatformsText.SetActive(false);
+
+        //Pause Menu settings
+        pauseMenu = invCount.pauseMenu;
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -92,7 +102,16 @@ public class GameManager : MonoBehaviour
         {
             if(prepPhase == true)
             {
-                EndPrepPhase();
+                if (GameObject.FindObjectOfType<ClickablePlatformDefiner>() == null)
+                {
+                    EndPrepPhase();
+                }
+                
+                else if (GameObject.FindObjectOfType<ClickablePlatformDefiner>() != null)
+                {
+                    placeAllPlatformsText.SetActive(true);
+                    StartCoroutine(AllPlatformsNotPlaced(3f));
+                }
             }
 
             else
@@ -120,7 +139,6 @@ public class GameManager : MonoBehaviour
         inventory.SetActive(true);
         PrepPhaseStarted.Invoke();
 
-
         //Sending player back to the start of the level
         player.transform.position = startingCoordinates;
         player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
@@ -141,6 +159,24 @@ public class GameManager : MonoBehaviour
 
     void PauseGame()
     {
-        //Insert pause functions here
+        if (paused == true)
+        {
+            paused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+        else if (paused == false)
+        {
+            paused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    IEnumerator AllPlatformsNotPlaced(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        placeAllPlatformsText.SetActive(false);
     }
 }

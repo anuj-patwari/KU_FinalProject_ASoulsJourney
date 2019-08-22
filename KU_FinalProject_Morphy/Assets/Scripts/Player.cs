@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (gm.prepPhase == false)
+        if (gm.prepPhase == false && gm.paused == false)
         {
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
@@ -47,10 +47,10 @@ public class Player : MonoBehaviour
 
             if (controller.m_JumpForce != 0)
             {
-                if(gm.prepPhase == false)
+                if(gm.prepPhase == false && gm.paused == false)
                 {
                     animator.SetBool("IsJumping", true);
-                    controller.timer = 5;
+                    controller.timer = 3;
                 }
             }
         }

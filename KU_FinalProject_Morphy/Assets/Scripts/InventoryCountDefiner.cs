@@ -10,6 +10,8 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject jumpPlatText;
     public GameObject getKeyText;
     public GameObject deathCounter;
+    public GameObject pauseMenu;
+    public GameObject placeAllPlatformsText;
 
     GlobalAudioManager gam;
 
