@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject startButton;
-    [SerializeField] GameObject prepPhaseButton;
     [SerializeField] GameObject canvas;
 
 
@@ -69,8 +67,7 @@ public class GameManager : MonoBehaviour
         platformIDNumber = 0;
         canvas.SetActive(true);
         prepPhase = true;
-        prepPhaseButton.SetActive(false);
-        startButton.SetActive(true);
+
 
         //Inventory Count Texts Referencing and Printing their texts at start
         invCount = FindObjectOfType<InventoryCountDefiner>();
@@ -91,39 +88,36 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(prepPhase);
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             if(prepPhase == true)
             {
                 EndPrepPhase();
-                print("prep ended");
             }
 
             else
             {
                 StartPrepPhase();
-                print("prep started");
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseGame();
         }
     }
 
     public void EndPrepPhase()
     {
-        TogglePrep();
+        prepPhase = false;
         inventory.SetActive(false);
-        startButton.SetActive(false);
-        prepPhaseButton.SetActive(true);
         PrepPhaseEnded.Invoke();
-        print("xxx");
     }
 
     public void StartPrepPhase()
     {
-        TogglePrep();
+        prepPhase = true;
         inventory.SetActive(true);
-        startButton.SetActive(true);
-        prepPhaseButton.SetActive(false);
         PrepPhaseStarted.Invoke();
 
 
@@ -145,8 +139,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    void TogglePrep()
+    void PauseGame()
     {
-        prepPhase = !prepPhase;
+        //Insert pause functions here
     }
 }
