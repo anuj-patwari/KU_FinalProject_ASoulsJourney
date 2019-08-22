@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public bool hasKey;
 
     Goal goal;
+    GlobalAudioManager gam;
 
     [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
@@ -54,7 +55,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        gam = FindObjectOfType<GlobalAudioManager>();
+
         startingCoordinates = player.transform.position;
         player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
 
@@ -164,6 +167,7 @@ public class GameManager : MonoBehaviour
             paused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;
+            gam.SaveVolume();
         }
 
         else if (paused == false)

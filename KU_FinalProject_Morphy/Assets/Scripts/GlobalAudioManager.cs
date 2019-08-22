@@ -54,6 +54,7 @@ public class GlobalAudioManager : MonoBehaviour
 
         data.levelsCompleted = levelsCompleted;
         data.deaths = deaths;
+        data.volume = gameObject.GetComponent<AudioSource>().volume;
 
         bf.Serialize(file, data);
         file.Close();
@@ -70,6 +71,7 @@ public class GlobalAudioManager : MonoBehaviour
 
             levelsCompleted = data.levelsCompleted;
             deaths = data.deaths;
+            gameObject.GetComponent<AudioSource>().volume = data.volume;
         }
     }
 
@@ -84,6 +86,7 @@ public class GlobalAudioManager : MonoBehaviour
 
             levelsCompleted = data.levelsCompleted;
             deaths = data.deaths;
+            gameObject.GetComponent<AudioSource>().volume = data.volume;
 
             if (levelsCompleted == 0)
             {
@@ -136,6 +139,21 @@ public class GlobalAudioManager : MonoBehaviour
         SaveGame();
         SceneManager.LoadScene("Level1");
     }
+
+    public void SaveVolume()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+
+        PlayerData data = new PlayerData();
+
+        data.levelsCompleted = levelsCompleted;
+        data.deaths = deaths;
+        data.volume = gameObject.GetComponent<AudioSource>().volume;
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
 }
 
 [Serializable]
@@ -143,4 +161,5 @@ class PlayerData
 {
     public int levelsCompleted;
     public int deaths;
+    public float volume;
 }

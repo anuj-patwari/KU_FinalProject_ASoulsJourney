@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1609,48 +1609,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1268230065}
-    - target: {fileID: 7871825899398329629, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: placeAllPlatformsText
-      value: 
-      objectReference: {fileID: 1875239419}
-    - target: {fileID: 7871825899398329629, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 1850439848}
-    - target: {fileID: 719413579, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
---- !u!1 &1850439848 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 719413579, guid: 73729469b81acea45b79f38560ef42dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1850439847}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1850439850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 108051080277887886, guid: 73729469b81acea45b79f38560ef42dc,
@@ -1660,12 +1620,6 @@ GameObject:
 --- !u!1 &1850439851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1850439847}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1875239419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1875239419, guid: 73729469b81acea45b79f38560ef42dc,
     type: 3}
   m_PrefabInstance: {fileID: 1850439847}
   m_PrefabAsset: {fileID: 0}
