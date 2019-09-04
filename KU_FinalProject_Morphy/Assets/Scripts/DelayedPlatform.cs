@@ -39,8 +39,8 @@ public class DelayedPlatform : MonoBehaviour
 
     void OnPlayerDied()
     {
+        StopAllCoroutines();
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         baseDelayedPlatform.SetActive(true);
-        StopAllCoroutines();
     }
 }
