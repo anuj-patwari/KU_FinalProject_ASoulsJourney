@@ -93,6 +93,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -150,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007868528, y: -0.010490775}
+  m_Offset: {x: 0.007868528, y: -0.004039079}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -161,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73177004, y: 0.75799835}
+  m_Size: {x: 0.73177004, y: 0.74509495}
   m_EdgeRadius: 0
 --- !u!114 &6468525450511303912
 MonoBehaviour:
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece6078675c1d44bb466bd29119e096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   m_JumpForce: 550
   n_JumpForce: -450
   m_CrouchSpeed: 0.4
