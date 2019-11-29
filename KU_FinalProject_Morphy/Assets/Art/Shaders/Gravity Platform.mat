@@ -31,4 +31,4 @@ Material:
     m_Colors:
     - Color_1088ED63: {r: 1, g: 1, b: 1, a: 0}
     - Color_3EBBBB1E: {r: 0.6606115, g: 0.7830189, b: 0.2400766, a: 0}
-    - Vector2_B4443D86: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Vector2_B4443D86: {r: 1.1, g: 0.15, b: 0, a: 0}
