@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gravity Platform
+  m_Name: GravityPlatform_Hold
   m_Shader: {fileID: -6465566751694194690, guid: 6ce269a7a5496254fb79f1dd28e8ce9f,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
