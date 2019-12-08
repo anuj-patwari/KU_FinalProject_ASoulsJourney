@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         else if (gm.levelNumber >= 19)
         {
             playerColor = 3;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.9333f, 0.5098f, 0.5098f, 1f);
         }
     }
 
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour
                 else if (playerColor == 2)
                 {
                     playerColor = 1;
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
                     print("its White now");
                 }
             }
@@ -99,11 +101,13 @@ public class Player : MonoBehaviour
                 else if (playerColor == 2)
                 {
                     playerColor = 3;
-                    print("its the third color now");
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.9333f, 0.5098f, 0.5098f, 1f);
+                    print("its red now");
                 }
                 else if (playerColor == 3)
                 {
                     playerColor = 1;
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
                     print("its white now");
                 }
             }
