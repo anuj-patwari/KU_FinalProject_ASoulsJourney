@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     bool jump = false;
 
     public float playerColor;
+    public Color c1, c2, c3;
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +37,13 @@ public class Player : MonoBehaviour
         }
         else if (gm.levelNumber >= 10 && gm.levelNumber < 19)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+            gameObject.GetComponent<SpriteRenderer>().color = c2;
             playerColor = 2;
         }
         else if (gm.levelNumber >= 19)
         {
             playerColor = 3;
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.9333f, 0.5098f, 0.5098f, 1f);
+            gameObject.GetComponent<SpriteRenderer>().color = c3;
         }
     }
 
@@ -79,13 +80,13 @@ public class Player : MonoBehaviour
                 if (playerColor == 1)
                 {
                     playerColor = 2;
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+                    gameObject.GetComponent<SpriteRenderer>().color = c2;
                     print("its Purple now");
                 }
                 else if (playerColor == 2)
                 {
                     playerColor = 1;
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    gameObject.GetComponent<SpriteRenderer>().color = c1;
                     print("its White now");
                 }
             }
@@ -95,20 +96,20 @@ public class Player : MonoBehaviour
                 if (playerColor == 1)
                 {
                     playerColor = 2;
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+                    gameObject.GetComponent<SpriteRenderer>().color = c2;
                     print("its Purple now");
                 }
                 else if (playerColor == 2)
                 {
                     playerColor = 3;
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.9333f, 0.5098f, 0.5098f, 1f);
-                    print("its red now");
+                    gameObject.GetComponent<SpriteRenderer>().color = c3;
+                    print("its Red now");
                 }
                 else if (playerColor == 3)
                 {
                     playerColor = 1;
-                    gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-                    print("its white now");
+                    gameObject.GetComponent<SpriteRenderer>().color = c1;
+                    print("its White now");
                 }
             }
         }
