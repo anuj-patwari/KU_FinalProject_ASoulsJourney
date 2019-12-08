@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     bool jump = false;
 
+    public float playerColor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,20 @@ public class Player : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         gam = FindObjectOfType<GlobalAudioManager>();
         animator.SetFloat("Speed", 0f);
+
+        if (gm.levelNumber < 10)
+        {
+            playerColor = 1;
+        }
+        else if (gm.levelNumber >= 10 && gm.levelNumber < 19)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+            playerColor = 2;
+        }
+        else if (gm.levelNumber >= 19)
+        {
+            playerColor = 3;
+        }
     }
 
     // Update is called once per frame
@@ -51,6 +67,44 @@ public class Player : MonoBehaviour
                 {
                     animator.SetBool("IsJumping", true);
                     controller.timer = 3;
+                }
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            if (gm.levelNumber > 9 && gm.levelNumber <= 18)
+            {
+                if (playerColor == 1)
+                {
+                    playerColor = 2;
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+                    print("its Purple now");
+                }
+                else if (playerColor == 2)
+                {
+                    playerColor = 1;
+                    print("its White now");
+                }
+            }
+
+            else if (gm.levelNumber > 18)
+            {
+                if (playerColor == 1)
+                {
+                    playerColor = 2;
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3647f, 0.3647f, 0.6745f, 1f);
+                    print("its Purple now");
+                }
+                else if (playerColor == 2)
+                {
+                    playerColor = 3;
+                    print("its the third color now");
+                }
+                else if (playerColor == 3)
+                {
+                    playerColor = 1;
+                    print("its white now");
                 }
             }
         }
