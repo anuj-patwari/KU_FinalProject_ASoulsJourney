@@ -7,8 +7,12 @@ public class ColouredPlatforms : MonoBehaviour
     Player player;
 
     [Tooltip("1 for White, 2 for Purple, 3 for Red")]
-    [SerializeField]
-    float platformColor;
+    public float platformColor;
+
+
+
+    [SerializeField] GameObject cross;
+    public bool placed;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,16 @@ public class ColouredPlatforms : MonoBehaviour
         else if (platformColor == 3)
         {
             gameObject.GetComponent<SpriteRenderer>().color = player.c3;
+        }
+
+        if (placed == true)
+        {
+            cross.SetActive(true);
+        }
+
+        else if (placed == false)
+        {
+            cross.SetActive(false);
         }
     }
 

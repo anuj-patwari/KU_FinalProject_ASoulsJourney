@@ -9,6 +9,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
     [SerializeField] GameObject rotatingPlatform;
     [SerializeField] GameObject gravityPlatform;
     [SerializeField] GameObject jumpPlatform;
+    [SerializeField] GameObject purplePlatform;
 
     GameManager gm;
 
@@ -67,6 +68,18 @@ public class ClickablePlatformDefiner : MonoBehaviour
             jumpPlatform.GetComponent<JumpPlatform>().placed = true;
             gm.jumpPlatformCount = gm.jumpPlatformCount - 1;
             gm.jumpPlatformCountText.GetComponent<Text>().text = gm.jumpPlatformCount.ToString();
+        }
+
+        if (gm.platformIDNumber == 4 && gm.purplePlatformCount > 0)
+        {
+            position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            GameObject platformToBePlaced = (GameObject)Instantiate(purplePlatform, position, transform.rotation);
+            Destroy(gameObject);
+            gm.platformIDNumber = 0;
+            purplePlatform.GetComponent<ColouredPlatforms>().placed = true;
+            purplePlatform.GetComponent<ColouredPlatforms>().platformColor = 2;
+            gm.purplePlatformCount = gm.purplePlatformCount - 1;
+            gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
         }
 
     }

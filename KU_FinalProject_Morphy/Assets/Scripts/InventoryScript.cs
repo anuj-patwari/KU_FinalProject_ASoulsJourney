@@ -32,4 +32,9 @@ public class InventoryScript : MonoBehaviour
     {
         gm.platformIDNumber = 3;
     }
+
+    public void PlacePurplePlatform()
+    {
+        gm.platformIDNumber = 4;
+    }
 }

@@ -41,9 +41,11 @@ public class GameManager : MonoBehaviour
     public float rotatingPlatformCount;
     public float gravityPlatformCount;
     public float jumpPlatformCount;
+    public float purplePlatformCount;
     [HideInInspector]public GameObject rotatingPlatformCountText;
     [HideInInspector]public GameObject gravityPlatformCountText;
     [HideInInspector]public GameObject jumpPlatformCountText;
+    [HideInInspector]public GameObject purplePlatformCountText;
 
 
     [Header("Gravity Variables")]
@@ -81,9 +83,11 @@ public class GameManager : MonoBehaviour
         rotatingPlatformCountText = invCount.rotatingText;
         gravityPlatformCountText = invCount.gravityText;
         jumpPlatformCountText = invCount.jumpPlatText;
+        purplePlatformCountText = invCount.purplePlatText;
         rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
+        purplePlatformCountText.GetComponent<Text>().text = purplePlatformCount.ToString();
 
 
         //Setting the Get Key GameObject to the Goal Script

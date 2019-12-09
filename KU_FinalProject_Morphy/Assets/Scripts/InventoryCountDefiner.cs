@@ -8,6 +8,7 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject rotatingText;
     public GameObject gravityText;
     public GameObject jumpPlatText;
+    public GameObject purplePlatText;
     public GameObject getKeyText;
     public GameObject deathCounter;
     public GameObject pauseMenu;
