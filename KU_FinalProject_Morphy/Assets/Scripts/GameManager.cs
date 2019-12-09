@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject placeAllPlatformsText;                                          //Place all platforms Text.
+    [SerializeField] GameObject changeColorText;
 
     public bool paused;                                                                         //Checking if the game is Paused.
 
@@ -92,10 +93,17 @@ public class GameManager : MonoBehaviour
 
         placeAllPlatformsText = invCount.placeAllPlatformsText;                                         //Setting the Text of placing all platforms.
         placeAllPlatformsText.SetActive(false);
+        changeColorText = invCount.changeColorText;
 
         //Pause Menu settings
         pauseMenu = invCount.pauseMenu;
         pauseMenu.SetActive(false);
+
+
+        if (levelNumber == 10)
+        {
+            StartCoroutine(ShowChangeColorText(1.6f));
+        }
     }
 
     // Update is called once per frame
@@ -126,6 +134,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             PauseGame();
+        }
+
+        if(levelNumber == 10)
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                changeColorText.SetActive(false);
+            }
         }
     }
 
@@ -182,5 +198,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         placeAllPlatformsText.SetActive(false);
+    }
+
+    IEnumerator ShowChangeColorText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        changeColorText.SetActive(true);
     }
 }

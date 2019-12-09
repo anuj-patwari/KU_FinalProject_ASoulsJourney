@@ -12,6 +12,7 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject deathCounter;
     public GameObject pauseMenu;
     public GameObject placeAllPlatformsText;
+    public GameObject changeColorText;
 
     GlobalAudioManager gam;
 

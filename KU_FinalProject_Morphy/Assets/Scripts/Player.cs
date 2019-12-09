@@ -35,15 +35,31 @@ public class Player : MonoBehaviour
         {
             playerColor = 1;
         }
-        else if (gm.levelNumber >= 10 && gm.levelNumber < 19)
+        else if (gm.levelNumber > 10 && gm.levelNumber < 19)
         {
             gameObject.GetComponent<SpriteRenderer>().color = c2;
             playerColor = 2;
         }
-        else if (gm.levelNumber >= 19)
+        else if (gm.levelNumber > 19)
         {
             playerColor = 3;
             gameObject.GetComponent<SpriteRenderer>().color = c3;
+        }
+
+        if (gm.levelNumber == 10)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = c1;
+            gameObject.GetComponent<CharacterController2D>().enabled = false;
+            playerColor = 2;
+            StartCoroutine(Level10Animation(1.6f)); 
+        }
+
+        if (gm.levelNumber == 19)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = c2;
+            gameObject.GetComponent<CharacterController2D>().enabled = false;
+            playerColor = 3;
+            StartCoroutine(Level19Animation(1.6f));
         }
     }
 
@@ -132,5 +148,19 @@ public class Player : MonoBehaviour
         gam.deaths++;
         gam.SaveGame();
         PlayerDied.Invoke();
+    }
+
+    IEnumerator Level10Animation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.GetComponent<CharacterController2D>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().color = c2;
+    }
+
+    IEnumerator Level19Animation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.GetComponent<CharacterController2D>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().color = c3;
     }
 }
