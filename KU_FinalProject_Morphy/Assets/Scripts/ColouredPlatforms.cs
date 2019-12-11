@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColouredPlatforms : MonoBehaviour
 {
     Player player;
+    GameManager gm;
 
     [Tooltip("1 for White, 2 for Purple, 3 for Red")]
     public float platformColor;
@@ -17,9 +18,14 @@ public class ColouredPlatforms : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
 
-        if(platformColor == 1)
+        Player.PlayerDied.AddListener(OnPlayerDied);
+        GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
+        GameManager.PrepPhaseEnded.AddListener(PreparationHasEnded);
+
+        if (platformColor == 1)
         {
             gameObject.GetComponent<SpriteRenderer>().color = player.c1;
         }
@@ -55,6 +61,24 @@ public class ColouredPlatforms : MonoBehaviour
         else
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
+
+    void OnPlayerDied()
+    {
+        
+    }
+
+    void PreparationHasEnded()
+    {
+        cross.SetActive(false);
+    }
+
+    void PreparationHasStarted()
+    {
+        if (placed == true)
+        {
+            cross.SetActive(true);
         }
     }
 }

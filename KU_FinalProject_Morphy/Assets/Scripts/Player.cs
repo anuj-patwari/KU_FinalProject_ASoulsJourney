@@ -148,6 +148,24 @@ public class Player : MonoBehaviour
         gam.deaths++;
         gam.SaveGame();
         PlayerDied.Invoke();
+
+
+        //Setting player's initial color based on what that level's starting color is.
+        if (gm.levelNumber < 10)
+        {
+            playerColor = 1;
+            gameObject.GetComponent<SpriteRenderer>().color = c1;
+        }
+        else if (gm.levelNumber >= 10 && gm.levelNumber < 19)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = c2;
+            playerColor = 2;
+        }
+        else if (gm.levelNumber > 18)
+        {
+            playerColor = 3;
+            gameObject.GetComponent<SpriteRenderer>().color = c3;
+        }
     }
 
     IEnumerator Level10Animation(float delay)

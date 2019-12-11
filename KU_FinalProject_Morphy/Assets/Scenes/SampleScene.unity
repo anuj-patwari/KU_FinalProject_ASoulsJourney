@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3505143118187906736, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_Name
@@ -257,6 +252,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1900940394}
+    - target: {fileID: 108051081818007990, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251190397211528518, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -277,12 +282,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 108051081818007990, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251190397211528518, guid: 73729469b81acea45b79f38560ef42dc,
+    - target: {fileID: 3505143118187906736, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6661,6 +6661,11 @@ PrefabInstance:
     - target: {fileID: 6548663842716281734, guid: 4d2e6feda9767f142a35e307780fe0d0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548663842716281849, guid: 4d2e6feda9767f142a35e307780fe0d0,
+        type: 3}
+      propertyPath: placed
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

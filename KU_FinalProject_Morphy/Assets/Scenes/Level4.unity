@@ -1539,13 +1539,16 @@ MonoBehaviour:
   canvas: {fileID: 1356148627}
   pauseMenu: {fileID: 0}
   placeAllPlatformsText: {fileID: 0}
+  changeColorText: {fileID: 0}
   paused: 0
   rotatingPlatformCount: 0
-  gravityPlatformCount: 2
+  gravityPlatformCount: 1
   jumpPlatformCount: 0
+  purplePlatformCount: 0
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
   jumpPlatformCountText: {fileID: 0}
+  purplePlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: -2
