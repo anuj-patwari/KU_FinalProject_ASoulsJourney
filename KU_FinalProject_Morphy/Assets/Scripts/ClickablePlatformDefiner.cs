@@ -74,10 +74,11 @@ public class ClickablePlatformDefiner : MonoBehaviour
         {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(purplePlatform, position, transform.rotation);
+            //purplePlatform.GetComponent<ColouredPlatforms>().platformColor = 1;
+            //print("changed");
             Destroy(gameObject);
             gm.platformIDNumber = 0;
             purplePlatform.GetComponent<ColouredPlatforms>().placed = true;
-            purplePlatform.GetComponent<ColouredPlatforms>().platformColor = 2;
             gm.purplePlatformCount = gm.purplePlatformCount - 1;
             gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
         }

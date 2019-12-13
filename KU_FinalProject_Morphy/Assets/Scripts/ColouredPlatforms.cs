@@ -28,15 +28,18 @@ public class ColouredPlatforms : MonoBehaviour
         if (platformColor == 1)
         {
             gameObject.GetComponent<SpriteRenderer>().color = player.c1;
+            cross.GetComponent<SpriteRenderer>().color = player.c1;
         }
 
         else if (platformColor == 2)
         {
             gameObject.GetComponent<SpriteRenderer>().color = player.c2;
+            cross.GetComponent<SpriteRenderer>().color = player.c2;
         }
         else if (platformColor == 3)
         {
             gameObject.GetComponent<SpriteRenderer>().color = player.c3;
+            cross.GetComponent<SpriteRenderer>().color = player.c3;
         }
 
         if (placed == true)
