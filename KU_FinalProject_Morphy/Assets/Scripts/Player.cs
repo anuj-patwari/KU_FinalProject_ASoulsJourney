@@ -97,13 +97,11 @@ public class Player : MonoBehaviour
                 {
                     playerColor = 2;
                     gameObject.GetComponent<SpriteRenderer>().color = c2;
-                    print("its Purple now");
                 }
                 else if (playerColor == 2)
                 {
                     playerColor = 1;
                     gameObject.GetComponent<SpriteRenderer>().color = c1;
-                    print("its White now");
                 }
             }
 
@@ -113,19 +111,16 @@ public class Player : MonoBehaviour
                 {
                     playerColor = 2;
                     gameObject.GetComponent<SpriteRenderer>().color = c2;
-                    print("its Purple now");
                 }
                 else if (playerColor == 2)
                 {
                     playerColor = 3;
                     gameObject.GetComponent<SpriteRenderer>().color = c3;
-                    print("its Red now");
                 }
                 else if (playerColor == 3)
                 {
                     playerColor = 1;
                     gameObject.GetComponent<SpriteRenderer>().color = c1;
-                    print("its White now");
                 }
             }
         }
