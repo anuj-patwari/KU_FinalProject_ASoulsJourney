@@ -91,36 +91,39 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            if (gm.levelNumber > 9 && gm.levelNumber <= 18)
+            if (gm.prepPhase == false)
             {
-                if (playerColor == 1)
+                if (gm.levelNumber > 9 && gm.levelNumber <= 18)
                 {
-                    playerColor = 2;
-                    gameObject.GetComponent<SpriteRenderer>().color = c2;
+                    if (playerColor == 1)
+                    {
+                        playerColor = 2;
+                        gameObject.GetComponent<SpriteRenderer>().color = c2;
+                    }
+                    else if (playerColor == 2)
+                    {
+                        playerColor = 1;
+                        gameObject.GetComponent<SpriteRenderer>().color = c1;
+                    }
                 }
-                else if (playerColor == 2)
-                {
-                    playerColor = 1;
-                    gameObject.GetComponent<SpriteRenderer>().color = c1;
-                }
-            }
 
-            else if (gm.levelNumber > 18)
-            {
-                if (playerColor == 1)
+                else if (gm.levelNumber > 18)
                 {
-                    playerColor = 2;
-                    gameObject.GetComponent<SpriteRenderer>().color = c2;
-                }
-                else if (playerColor == 2)
-                {
-                    playerColor = 3;
-                    gameObject.GetComponent<SpriteRenderer>().color = c3;
-                }
-                else if (playerColor == 3)
-                {
-                    playerColor = 1;
-                    gameObject.GetComponent<SpriteRenderer>().color = c1;
+                    if (playerColor == 1)
+                    {
+                        playerColor = 2;
+                        gameObject.GetComponent<SpriteRenderer>().color = c2;
+                    }
+                    else if (playerColor == 2)
+                    {
+                        playerColor = 3;
+                        gameObject.GetComponent<SpriteRenderer>().color = c3;
+                    }
+                    else if (playerColor == 3)
+                    {
+                        playerColor = 1;
+                        gameObject.GetComponent<SpriteRenderer>().color = c1;
+                    }
                 }
             }
         }

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     Goal goal;
     GlobalAudioManager gam;
+    Player playerScript;
 
     [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
 
         gam = FindObjectOfType<GlobalAudioManager>();
+        playerScript = FindObjectOfType<Player>();
 
         startingCoordinates = player.transform.position;
         player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
@@ -132,6 +134,39 @@ public class GameManager : MonoBehaviour
             else
             {
                 StartPrepPhase();
+
+                if (levelNumber > 9 && levelNumber <= 18)
+                {
+                    if (playerScript.playerColor == 1)
+                    {
+                        playerScript.playerColor = 2;
+                        player.GetComponent<SpriteRenderer>().color = playerScript.c2;
+                    }
+                    else if (playerScript.playerColor == 2)
+                    {
+                        playerScript.playerColor = 1;
+                        player.GetComponent<SpriteRenderer>().color = playerScript.c1;
+                    }
+                }
+
+                else if (levelNumber > 18)
+                {
+                    if (playerScript.playerColor == 1)
+                    {
+                        playerScript.playerColor = 2;
+                        player.GetComponent<SpriteRenderer>().color = playerScript.c2;
+                    }
+                    else if (playerScript.playerColor == 2)
+                    {
+                        playerScript.playerColor = 3;
+                        player.GetComponent<SpriteRenderer>().color = playerScript.c3;
+                    }
+                    else if (playerScript.playerColor == 3)
+                    {
+                        playerScript.playerColor = 1;
+                        player.GetComponent<SpriteRenderer>().color = playerScript.c1;
+                    }
+                }
             }
         }
 
@@ -154,6 +189,7 @@ public class GameManager : MonoBehaviour
         prepPhase = false;
         inventory.SetActive(false);
         PrepPhaseEnded.Invoke();
+        player.GetComponent<CharacterController2D>().enabled = true;
     }
 
     public void StartPrepPhase()
@@ -161,6 +197,7 @@ public class GameManager : MonoBehaviour
         prepPhase = true;
         inventory.SetActive(true);
         PrepPhaseStarted.Invoke();
+        player.GetComponent<CharacterController2D>().enabled = false;
 
         //Sending player back to the start of the level
         player.transform.position = startingCoordinates;
