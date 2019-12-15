@@ -1472,11 +1472,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingCoordinates: {x: 0, y: 0, z: 0}
   player: {fileID: 879619277}
-  levelNumber: 11
-  nextLevel: Level12
+  levelNumber: 12
+  nextLevel: Level13
   platformIDNumber: 0
   prepPhase: 0
-  hasKey: 1
+  hasKey: 0
   inventory: {fileID: 1356148630}
   canvas: {fileID: 1356148627}
   pauseMenu: {fileID: 0}
