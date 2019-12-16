@@ -2269,8 +2269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingCoordinates: {x: 0, y: 0, z: 0}
   player: {fileID: 879619277}
-  levelNumber: 8
-  nextLevel: Level9
+  levelNumber: 15
+  nextLevel: Level16
   platformIDNumber: 0
   prepPhase: 0
   hasKey: 0
@@ -2278,13 +2278,16 @@ MonoBehaviour:
   canvas: {fileID: 1356148627}
   pauseMenu: {fileID: 0}
   placeAllPlatformsText: {fileID: 0}
+  changeColorText: {fileID: 0}
   paused: 0
   rotatingPlatformCount: 1
   gravityPlatformCount: 2
   jumpPlatformCount: 1
+  purplePlatformCount: 0
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
   jumpPlatformCountText: {fileID: 0}
+  purplePlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: -2
@@ -2600,11 +2603,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1280626902}
-    - target: {fileID: 6064110529996195769, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4807403255051660573, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_Sprite
@@ -2620,6 +2618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064110529996195769, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1208452190, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_IsActive
