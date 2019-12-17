@@ -158,7 +158,10 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                changeColorText.SetActive(false);
+                if (!prepPhase)
+                {
+                    changeColorText.SetActive(false);
+                }
             }
         }
     }
