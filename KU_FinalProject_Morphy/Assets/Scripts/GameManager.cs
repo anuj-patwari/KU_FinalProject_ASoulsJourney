@@ -137,35 +137,14 @@ public class GameManager : MonoBehaviour
 
                 if (levelNumber > 9 && levelNumber <= 18)
                 {
-                    if (playerScript.playerColor == 1)
-                    {
-                        playerScript.playerColor = 2;
-                        player.GetComponent<SpriteRenderer>().color = playerScript.c2;
-                    }
-                    else if (playerScript.playerColor == 2)
-                    {
-                        playerScript.playerColor = 1;
-                        player.GetComponent<SpriteRenderer>().color = playerScript.c1;
-                    }
+                    playerScript.playerColor = 2;
+                    player.GetComponent<SpriteRenderer>().color = playerScript.c2;
                 }
 
                 else if (levelNumber > 18)
                 {
-                    if (playerScript.playerColor == 1)
-                    {
-                        playerScript.playerColor = 2;
-                        player.GetComponent<SpriteRenderer>().color = playerScript.c2;
-                    }
-                    else if (playerScript.playerColor == 2)
-                    {
-                        playerScript.playerColor = 3;
-                        player.GetComponent<SpriteRenderer>().color = playerScript.c3;
-                    }
-                    else if (playerScript.playerColor == 3)
-                    {
-                        playerScript.playerColor = 1;
-                        player.GetComponent<SpriteRenderer>().color = playerScript.c1;
-                    }
+                    playerScript.playerColor = 3;
+                    player.GetComponent<SpriteRenderer>().color = playerScript.c3;
                 }
             }
         }
