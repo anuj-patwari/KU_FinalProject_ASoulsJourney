@@ -27,12 +27,25 @@ public class RemoveColoredPlatform : MonoBehaviour
     {
         if (platform.GetComponent<ColouredPlatforms>().placed == true)
         {
-            position = new Vector2(platform.transform.position.x, platform.transform.position.y);
-            GameObject platformToBePlaced = (GameObject)Instantiate(platformPlacer, position, transform.rotation);
-            Destroy(platform);
-            gm.platformIDNumber = 0;
-            gm.purplePlatformCount = gm.purplePlatformCount + 1;
-            gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
+            if (platform.GetComponent<ColouredPlatforms>().platformColor == 2)
+            {
+                position = new Vector2(platform.transform.position.x, platform.transform.position.y);
+                GameObject platformToBePlaced = (GameObject)Instantiate(platformPlacer, position, transform.rotation);
+                Destroy(platform);
+                gm.platformIDNumber = 0;
+                gm.purplePlatformCount = gm.purplePlatformCount + 1;
+                gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
+            }
+
+            else if (platform.GetComponent<ColouredPlatforms>().platformColor == 3)
+            {
+                position = new Vector2(platform.transform.position.x, platform.transform.position.y);
+                GameObject platformToBePlaced = (GameObject)Instantiate(platformPlacer, position, transform.rotation);
+                Destroy(platform);
+                gm.platformIDNumber = 0;
+                gm.pinkPlatformCount = gm.pinkPlatformCount + 1;
+                gm.pinkPlatformCountText.GetComponent<Text>().text = gm.pinkPlatformCount.ToString();
+            }
         }
 
     }
