@@ -43,10 +43,12 @@ public class GameManager : MonoBehaviour
     public float gravityPlatformCount;
     public float jumpPlatformCount;
     public float purplePlatformCount;
+    public float pinkPlatformCount;
     [HideInInspector]public GameObject rotatingPlatformCountText;
     [HideInInspector]public GameObject gravityPlatformCountText;
     [HideInInspector]public GameObject jumpPlatformCountText;
     [HideInInspector]public GameObject purplePlatformCountText;
+    [HideInInspector]public GameObject pinkPlatformCountText;
 
 
     [Header("Gravity Variables")]
@@ -86,10 +88,12 @@ public class GameManager : MonoBehaviour
         gravityPlatformCountText = invCount.gravityText;
         jumpPlatformCountText = invCount.jumpPlatText;
         purplePlatformCountText = invCount.purplePlatText;
+        pinkPlatformCountText = invCount.pinkPlatformText;
         rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
         purplePlatformCountText.GetComponent<Text>().text = purplePlatformCount.ToString();
+        pinkPlatformCountText.GetComponent<Text>().text = pinkPlatformCount.ToString();
 
 
         //Setting the Get Key GameObject to the Goal Script
@@ -106,7 +110,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
 
 
-        if (levelNumber == 10)
+        if (levelNumber == 10 || levelNumber == 19)
         {
             StartCoroutine(ShowChangeColorText(1.6f));
         }

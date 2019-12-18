@@ -9,11 +9,16 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject gravityText;
     public GameObject jumpPlatText;
     public GameObject purplePlatText;
+    public GameObject pinkPlatformText;
+
+
     public GameObject getKeyText;
+    public GameObject changeColorText;
+
+
     public GameObject deathCounter;
     public GameObject pauseMenu;
     public GameObject placeAllPlatformsText;
-    public GameObject changeColorText;
 
     GlobalAudioManager gam;
 

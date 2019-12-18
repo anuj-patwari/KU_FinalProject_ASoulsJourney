@@ -130,6 +130,8 @@ MonoBehaviour:
     type: 3}
   purplePlatform: {fileID: 6548663842716281733, guid: 4d2e6feda9767f142a35e307780fe0d0,
     type: 3}
+  pinkPlatform: {fileID: 6548663842716281733, guid: d88dab66c6ed55e4f9369de57b36ec1e,
+    type: 3}
 --- !u!95 &7034601231387560223
 Animator:
   serializedVersion: 3

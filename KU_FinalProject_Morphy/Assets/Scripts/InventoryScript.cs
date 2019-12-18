@@ -37,4 +37,9 @@ public class InventoryScript : MonoBehaviour
     {
         gm.platformIDNumber = 4;
     }
+
+    public void PlacePinkPlatform()
+    {
+        gm.platformIDNumber = 5;
+    }
 }
