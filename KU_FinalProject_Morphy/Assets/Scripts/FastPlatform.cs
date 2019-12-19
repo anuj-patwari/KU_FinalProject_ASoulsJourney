@@ -9,11 +9,15 @@ public class FastPlatform : MonoBehaviour
     Player player;
     GameManager gm;
 
+    IEnumerator stopBackToFalse;
+
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
+
+        stopBackToFalse = BackToFalse(3);
 
         Player.PlayerDied.AddListener(OnPlayerDied);
         GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
@@ -34,6 +38,8 @@ public class FastPlatform : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        hasLeftCollision = false;
+        StopCoroutine(stopBackToFalse);
         if (col.gameObject.name == "Player")
         {
             col.gameObject.GetComponent<Player>().runSpeed = 80;
@@ -45,7 +51,7 @@ public class FastPlatform : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             hasLeftCollision = true;
-            StartCoroutine(BackToFalse(3));
+            StartCoroutine(stopBackToFalse);
             //col.gameObject.GetComponent<Player>().runSpeed = 20;
         }
     }
@@ -55,6 +61,7 @@ public class FastPlatform : MonoBehaviour
         yield return new WaitForSeconds(delay);
         hasLeftCollision = false;
         player.runSpeed = 20f;
+        print("print");
     }
 
     void OnPlayerDied()

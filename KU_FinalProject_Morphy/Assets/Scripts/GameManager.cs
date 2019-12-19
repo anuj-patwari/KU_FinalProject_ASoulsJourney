@@ -91,11 +91,13 @@ public class GameManager : MonoBehaviour
         jumpPlatformCountText = invCount.jumpPlatText;
         purplePlatformCountText = invCount.purplePlatText;
         pinkPlatformCountText = invCount.pinkPlatformText;
+        fastPlatformCountText = invCount.fastPlatformText;
         rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
         purplePlatformCountText.GetComponent<Text>().text = purplePlatformCount.ToString();
         pinkPlatformCountText.GetComponent<Text>().text = pinkPlatformCount.ToString();
+        fastPlatformCountText.GetComponent<Text>().text = fastPlatformCount.ToString();
 
 
         //Setting the Get Key GameObject to the Goal Script
