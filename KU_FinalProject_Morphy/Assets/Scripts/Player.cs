@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     float horizontalMove = 0f;
 
     public float runSpeed = 40f;
+    public bool hasLeftFPCollision = false;
 
     bool jump = false;
 

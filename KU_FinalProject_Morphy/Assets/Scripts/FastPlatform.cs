@@ -27,18 +27,18 @@ public class FastPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasLeftCollision == true)
+        if (player.hasLeftFPCollision == true)
         {
             if (player.runSpeed > 20)
             {
-                player.runSpeed -= Time.deltaTime * 30f;
+                player.runSpeed -= Time.deltaTime * 10f;
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        hasLeftCollision = false;
+        player.hasLeftFPCollision = false;
         StopCoroutine(stopBackToFalse);
         if (col.gameObject.name == "Player")
         {
@@ -50,7 +50,7 @@ public class FastPlatform : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            hasLeftCollision = true;
+            player.hasLeftFPCollision = true;
             StartCoroutine(stopBackToFalse);
             //col.gameObject.GetComponent<Player>().runSpeed = 20;
         }
@@ -59,7 +59,7 @@ public class FastPlatform : MonoBehaviour
     IEnumerator BackToFalse (float delay)
     {
         yield return new WaitForSeconds(delay);
-        hasLeftCollision = false;
+        player.hasLeftFPCollision = false;
         player.runSpeed = 20f;
         print("print");
     }
