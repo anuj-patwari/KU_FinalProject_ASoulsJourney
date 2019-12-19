@@ -16,8 +16,9 @@ public class Player : MonoBehaviour
 
     float horizontalMove = 0f;
 
-    public float runSpeed = 40f;
+    public float runSpeed = 20f;
     public bool hasLeftFPCollision = false;
+    public IEnumerator stopBackToFalse;
 
     bool jump = false;
 
@@ -31,6 +32,9 @@ public class Player : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         gam = FindObjectOfType<GlobalAudioManager>();
         animator.SetFloat("Speed", 0f);
+        stopBackToFalse = BackToFalse(3);
+        runSpeed = 20f;
+
 
         if (gm.levelNumber < 10)
         {
@@ -179,5 +183,22 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(delay);
         gameObject.GetComponent<CharacterController2D>().enabled = true;
         gameObject.GetComponent<SpriteRenderer>().color = c3;
+    }
+
+    IEnumerator BackToFalse(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        hasLeftFPCollision = false;
+        runSpeed = 20f;
+    }
+
+    public void SettingCollisionToFalse()
+    {
+        StartCoroutine(stopBackToFalse);
+    }
+
+    public void StoppingFalseCoroutine()
+    {
+        StopCoroutine(stopBackToFalse);
     }
 }

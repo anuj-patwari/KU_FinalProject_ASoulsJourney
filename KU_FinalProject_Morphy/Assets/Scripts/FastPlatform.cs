@@ -5,19 +5,14 @@ using UnityEngine;
 public class FastPlatform : MonoBehaviour
 {
 
-    public bool hasLeftCollision = false;
     Player player;
     GameManager gm;
-
-    IEnumerator stopBackToFalse;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
-
-        stopBackToFalse = BackToFalse(3);
 
         Player.PlayerDied.AddListener(OnPlayerDied);
         GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
@@ -31,7 +26,7 @@ public class FastPlatform : MonoBehaviour
         {
             if (player.runSpeed > 20)
             {
-                player.runSpeed -= Time.deltaTime * 10f;
+                player.runSpeed -= Time.deltaTime * 8f;
             }
         }
     }
@@ -39,7 +34,7 @@ public class FastPlatform : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         player.hasLeftFPCollision = false;
-        StopCoroutine(stopBackToFalse);
+        player.StoppingFalseCoroutine();
         if (col.gameObject.name == "Player")
         {
             col.gameObject.GetComponent<Player>().runSpeed = 80;
@@ -51,17 +46,8 @@ public class FastPlatform : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             player.hasLeftFPCollision = true;
-            StartCoroutine(stopBackToFalse);
-            //col.gameObject.GetComponent<Player>().runSpeed = 20;
+            player.SettingCollisionToFalse();
         }
-    }
-
-    IEnumerator BackToFalse (float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        player.hasLeftFPCollision = false;
-        player.runSpeed = 20f;
-        print("print");
     }
 
     void OnPlayerDied()
