@@ -42,4 +42,9 @@ public class InventoryScript : MonoBehaviour
     {
         gm.platformIDNumber = 5;
     }
+
+    public void PlaceFastPlatfrom()
+    {
+        gm.platformIDNumber = 6;
+    }
 }

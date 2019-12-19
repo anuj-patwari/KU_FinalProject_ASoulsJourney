@@ -10,6 +10,7 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject jumpPlatText;
     public GameObject purplePlatText;
     public GameObject pinkPlatformText;
+    public GameObject fastPlatformText;
 
 
     public GameObject getKeyText;

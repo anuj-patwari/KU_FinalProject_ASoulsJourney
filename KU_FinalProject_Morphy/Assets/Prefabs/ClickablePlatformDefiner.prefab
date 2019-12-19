@@ -132,6 +132,8 @@ MonoBehaviour:
     type: 3}
   pinkPlatform: {fileID: 6548663842716281733, guid: d88dab66c6ed55e4f9369de57b36ec1e,
     type: 3}
+  fastPlatform: {fileID: 2058994328143220283, guid: 39c468b80b08c9944ba6a15029313af4,
+    type: 3}
 --- !u!95 &7034601231387560223
 Animator:
   serializedVersion: 3

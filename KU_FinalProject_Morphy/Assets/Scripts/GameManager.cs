@@ -44,11 +44,13 @@ public class GameManager : MonoBehaviour
     public float jumpPlatformCount;
     public float purplePlatformCount;
     public float pinkPlatformCount;
+    public float fastPlatformCount;
     [HideInInspector]public GameObject rotatingPlatformCountText;
     [HideInInspector]public GameObject gravityPlatformCountText;
     [HideInInspector]public GameObject jumpPlatformCountText;
     [HideInInspector]public GameObject purplePlatformCountText;
     [HideInInspector]public GameObject pinkPlatformCountText;
+    [HideInInspector]public GameObject fastPlatformCountText;
 
 
     [Header("Gravity Variables")]

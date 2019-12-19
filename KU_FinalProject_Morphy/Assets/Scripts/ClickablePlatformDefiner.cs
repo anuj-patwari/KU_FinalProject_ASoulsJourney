@@ -11,6 +11,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
     [SerializeField] GameObject jumpPlatform;
     [SerializeField] GameObject purplePlatform;
     [SerializeField] GameObject pinkPlatform;
+    [SerializeField] GameObject fastPlatform;
 
     GameManager gm;
 
@@ -91,6 +92,17 @@ public class ClickablePlatformDefiner : MonoBehaviour
             pinkPlatform.GetComponent<ColouredPlatforms>().placed = true;
             gm.pinkPlatformCount = gm.pinkPlatformCount - 1;
             gm.pinkPlatformCountText.GetComponent<Text>().text = gm.pinkPlatformCount.ToString();
+        }
+
+        if (gm.platformIDNumber == 6 && gm.fastPlatformCount > 0)
+        {
+            position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            GameObject platformToBePlaced = (GameObject)Instantiate(fastPlatform, position, transform.rotation);
+            Destroy(gameObject);
+            gm.platformIDNumber = 0;
+            fastPlatform.GetComponent<pCheckFastPlatform>().placed = true;
+            gm.fastPlatformCount = gm.fastPlatformCount - 1;
+            gm.fastPlatformCountText.GetComponent<Text>().text = gm.fastPlatformCount.ToString();
         }
 
     }

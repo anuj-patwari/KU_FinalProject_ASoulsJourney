@@ -7,11 +7,17 @@ public class FastPlatform : MonoBehaviour
 
     public bool hasLeftCollision = false;
     Player player;
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
+
+        Player.PlayerDied.AddListener(OnPlayerDied);
+        GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
+        GameManager.PrepPhaseEnded.AddListener(PreparationHasEnded);
     }
 
     // Update is called once per frame
@@ -49,5 +55,20 @@ public class FastPlatform : MonoBehaviour
         yield return new WaitForSeconds(delay);
         hasLeftCollision = false;
         player.runSpeed = 20f;
+    }
+
+    void OnPlayerDied()
+    {
+
+    }
+
+    void PreparationHasEnded()
+    {
+        
+    }
+
+    void PreparationHasStarted()
+    {
+
     }
 }
