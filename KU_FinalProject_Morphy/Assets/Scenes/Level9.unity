@@ -1476,7 +1476,7 @@ MonoBehaviour:
   startingCoordinates: {x: 0, y: 0, z: 0}
   player: {fileID: 879619277}
   levelNumber: 9
-  nextLevel: Level10
+  nextLevel: Section1Completed
   platformIDNumber: 0
   prepPhase: 0
   hasKey: 1
@@ -1610,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
@@ -1777,6 +1777,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -415
+      objectReference: {fileID: 0}
+    - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
