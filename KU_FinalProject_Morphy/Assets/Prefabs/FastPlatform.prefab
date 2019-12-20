@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 98558152}
   - component: {fileID: 98558155}
   - component: {fileID: 98558154}
-  - component: {fileID: 98558153}
+  - component: {fileID: 1242823497364867628}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -108,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67688656, y: 0.67905617}
   m_EdgeRadius: 0
---- !u!114 &98558153
+--- !u!114 &1242823497364867628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 98558151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942eb8258b10fe545ba215083cc14dba, type: 3}
+  m_Script: {fileID: 11500000, guid: ad7750266c56ca2448cd213d863fc0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
@@ -194,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21eee0ef11d3f6f43b1aa509d8270fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasLeftCollision: 0
 --- !u!1 &1473791733
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,4 +470,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21eee0ef11d3f6f43b1aa509d8270fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasLeftCollision: 0
