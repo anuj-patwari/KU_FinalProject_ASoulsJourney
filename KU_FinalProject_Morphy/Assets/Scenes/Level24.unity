@@ -1900,7 +1900,7 @@ MonoBehaviour:
   nextLevel: Level25
   platformIDNumber: 0
   prepPhase: 0
-  hasKey: 1
+  hasKey: 0
   inventory: {fileID: 1356148630}
   canvas: {fileID: 1356148627}
   pauseMenu: {fileID: 0}
