@@ -1636,11 +1636,13 @@ MonoBehaviour:
   jumpPlatformCount: 0
   purplePlatformCount: 0
   pinkPlatformCount: 1
+  fastPlatformCount: 0
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
   jumpPlatformCountText: {fileID: 0}
   purplePlatformCountText: {fileID: 0}
   pinkPlatformCountText: {fileID: 0}
+  fastPlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: 3
@@ -1665,11 +1667,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2009204246847112994, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_Name
@@ -1679,6 +1676,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118284096555732172, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -570
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009204246847112994, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}

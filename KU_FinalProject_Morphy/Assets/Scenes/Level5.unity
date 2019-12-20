@@ -1276,13 +1276,20 @@ MonoBehaviour:
   canvas: {fileID: 1356148627}
   pauseMenu: {fileID: 0}
   placeAllPlatformsText: {fileID: 0}
+  changeColorText: {fileID: 0}
   paused: 0
   rotatingPlatformCount: 2
   gravityPlatformCount: 2
   jumpPlatformCount: 0
+  purplePlatformCount: 0
+  pinkPlatformCount: 0
+  fastPlatformCount: 0
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
   jumpPlatformCountText: {fileID: 0}
+  purplePlatformCountText: {fileID: 0}
+  pinkPlatformCountText: {fileID: 0}
+  fastPlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: -2
@@ -1384,7 +1391,7 @@ PrefabInstance:
     - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
@@ -1520,6 +1527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108051081818007991, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -403.7772
       objectReference: {fileID: 0}
     - target: {fileID: 4807403255051660573, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}

@@ -30,7 +30,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (gm.levelNumber != 10)
+        if (gm.levelNumber != 27)
         {
             if (col.gameObject.name == "Player")
             {
@@ -51,7 +51,7 @@ public class Goal : MonoBehaviour
                 }
             }
         }
-        else if (gm.levelNumber == 10)
+        else if (gm.levelNumber == 27)
         {
             SceneManager.LoadScene("Credits");
         }
