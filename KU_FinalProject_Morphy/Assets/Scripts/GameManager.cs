@@ -180,6 +180,10 @@ public class GameManager : MonoBehaviour
         inventory.SetActive(false);
         PrepPhaseEnded.Invoke();
         player.GetComponent<CharacterController2D>().enabled = true;
+
+
+        invCount.deathCounter.GetComponent<Text>().color = invCount.c2;                                                                //Setting Death counter text to White
+        invCount.levelNumberText.GetComponent<Image>().color = invCount.c2;                                                          //Setting Level Number text to White
     }
 
     public void StartPrepPhase()
@@ -200,6 +204,9 @@ public class GameManager : MonoBehaviour
         {
             player.transform.eulerAngles = new Vector3(0, 180f, 180f);
         }
+        
+        invCount.deathCounter.GetComponent<Text>().color = invCount.c1;                                                                //Setting Death counter text to Blue
+        invCount.levelNumberText.GetComponent<Image>().color = invCount.c1;                                                          //Setting Level Number text to Blue
     }
 
     public void BackToMainMenu()

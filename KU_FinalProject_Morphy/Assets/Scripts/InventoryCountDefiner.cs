@@ -12,7 +12,6 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject pinkPlatformText;
     public GameObject fastPlatformText;
 
-
     public GameObject getKeyText;
     public GameObject changeColorText;
 
@@ -20,6 +19,11 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject deathCounter;
     public GameObject pauseMenu;
     public GameObject placeAllPlatformsText;
+
+    public GameObject levelNumberText;
+    [Header("Deaths and Level Number colors")]
+    public Color c1;
+    public Color c2;
 
     GlobalAudioManager gam;
 
