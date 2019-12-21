@@ -137,7 +137,7 @@ public class GlobalAudioManager : MonoBehaviour
         levelsCompleted = 0;
         deaths = 0;
         SaveGame();
-        SceneManager.LoadScene("Level1");
+        //SceneManager.LoadScene("Level1");
     }
 
     public void SaveVolume()

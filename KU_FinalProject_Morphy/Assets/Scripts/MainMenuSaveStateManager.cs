@@ -10,11 +10,13 @@ public class MainMenuSaveStateManager : MonoBehaviour
     [SerializeField] GameObject saveStateGroup;
 
     GlobalAudioManager gam;
+    MainMenuManager mmm;
 
     // Start is called before the first frame update
     void Start()
     {
         gam = FindObjectOfType<GlobalAudioManager>();
+        mmm = FindObjectOfType<MainMenuManager>();
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
             if (gam.levelsCompleted > 0 || gam.deaths > 0)
@@ -50,6 +52,7 @@ public class MainMenuSaveStateManager : MonoBehaviour
     public void NewGame()
     {
         gam.NewGame();
+        mmm.StartGame();
     }
 
     public void LoadGame()
