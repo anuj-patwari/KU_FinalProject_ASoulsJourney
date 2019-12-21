@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2118284096555732172, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
@@ -308,29 +308,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 235894480, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1978564833, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1391627087, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7acc11d48f5307e4eacb449377116787,
         type: 3}
+    - target: {fileID: 3120065767184585760, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246338630721206968, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2151964763556892857, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_Name
@@ -365,16 +375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120065767184585760, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246338630721206968, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_Material
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3608220990319862012, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}

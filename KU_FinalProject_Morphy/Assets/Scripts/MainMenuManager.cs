@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
 
     int timer;
+    [SerializeField] GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        canvas.GetComponent<Animator>().enabled = true;
+        StartCoroutine(SwitchScene(0.85f));
+    }
+
+    IEnumerator SwitchScene(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void HowToPlay()
