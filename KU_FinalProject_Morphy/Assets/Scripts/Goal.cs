@@ -91,9 +91,21 @@ public class Goal : MonoBehaviour
         }
         else if (gm.levelNumber == 27)
         {
-            SceneManager.LoadScene("Credits");
+            if (col.gameObject.name == "Player")
+            {
+                if (gm.hasKey == true)
+                {
+                    SceneManager.LoadScene("Credits");
+                    gam.SaveGame();
+                }
+
+                else if (gm.hasKey == false)
+                {
+                    getKeyText.GetComponent<Text>().enabled = true;
+                    StartCoroutine(DeactivateText(3));
+                }
+            }
         }
-        
     }
 
     IEnumerator DeactivateText(float delay)

@@ -9,23 +9,52 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     GlobalAudioManager gam;
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         gam = FindObjectOfType<GlobalAudioManager>();
-        volumeSlider.GetComponent<Slider>().value = gam.GetComponent<AudioSource>().volume;
+        gm = FindObjectOfType<GameManager>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gm.levelNumber < 10)
+        {
+            volumeSlider.GetComponent<Slider>().value = gam.GetComponent<AudioSource>().volume;
+        }
 
+        else if (gm.levelNumber > 9 && gm.levelNumber < 19)
+        {
+            volumeSlider.GetComponent<Slider>().value = gam.sectionTwoAudio.GetComponent<AudioSource>().volume;
+        }
+
+        else if (gm.levelNumber > 18)
+        {
+            volumeSlider.GetComponent<Slider>().value = gam.sectionThreeAudio.GetComponent<AudioSource>().volume;
+        }
     }
 
     public void AdjustVolume(float volume)
     {
-        gam.GetComponent<AudioSource>().volume = volume;
+        if (gm.levelNumber < 10)
+        {
+            gam.GetComponent<AudioSource>().volume = volume;
+        }
+
+        else if (gm.levelNumber > 9 && gm.levelNumber < 19)
+        {
+            gam.sectionTwoAudio.GetComponent<AudioSource>().volume = volume;
+        }
+
+        else if (gm.levelNumber > 18)
+        {
+            gam.sectionThreeAudio.GetComponent<AudioSource>().volume = volume;
+        }
     }
 
     public void MainMenu()

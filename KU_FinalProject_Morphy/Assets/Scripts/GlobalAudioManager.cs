@@ -10,6 +10,10 @@ public class GlobalAudioManager : MonoBehaviour
 {
 
     public static GlobalAudioManager gam;
+    public GameObject sectionTwoAudio;
+    public GameObject sectionThreeAudio;
+    [HideInInspector]public int secOneAudioCounter, secTwoAudioCounter, secThreeAudioCounter;
+
 
     public int deaths;
     public int levelsCompleted;
@@ -20,6 +24,8 @@ public class GlobalAudioManager : MonoBehaviour
         if (gam == null)
         {
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(sectionTwoAudio);
+            DontDestroyOnLoad(sectionThreeAudio);
             gam = this;
         }
         else if (gam != null)
@@ -32,6 +38,11 @@ public class GlobalAudioManager : MonoBehaviour
     {
         ReloadSavedGame();
         Application.targetFrameRate = 150;
+
+        if (SceneManager.GetActiveScene().name == "Section1Completed")
+        {
+            print("main menu");
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +54,30 @@ public class GlobalAudioManager : MonoBehaviour
             {
                 File.Delete(Application.persistentDataPath + "/playerInfo.dat");
             }
+        }
+
+        if (secOneAudioCounter > 0)
+        {
+            gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 1, Time.deltaTime);
+            sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            secOneAudioCounter--;
+        }
+
+        if (secTwoAudioCounter > 0)
+        {
+            gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 1, Time.deltaTime);
+            sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            secTwoAudioCounter--;
+        }
+
+        if (secThreeAudioCounter > 0)
+        {
+            gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
+            sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0.6f, Time.deltaTime);
+            secThreeAudioCounter--;
         }
     }
     public void SaveGame()
@@ -153,6 +188,11 @@ public class GlobalAudioManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+    }
+
+    public void VolumeChange()
+    {
+        
     }
 }
 

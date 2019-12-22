@@ -6,22 +6,29 @@ using UnityEngine.SceneManagement;
 public class IntroSceneStory : MonoBehaviour
 {
 
+    GlobalAudioManager gam;
+
     // Start is called before the first frame update
     void Start()
     {
+        gam = FindObjectOfType<GlobalAudioManager>();
+
         if (SceneManager.GetActiveScene().name == "IntroScene")
         {
             StartCoroutine(SwitchToLevelOne(15));
+            gam.secOneAudioCounter = 500;
         }
 
         else if (SceneManager.GetActiveScene().name == "Section1Completed")
         {
             StartCoroutine(SwitchToLevelTen(15));
+            gam.secTwoAudioCounter = 500;
         }
 
         else if (SceneManager.GetActiveScene().name == "Section2Completed")
         {
             StartCoroutine(SwitchToLevelNineteen(19));
+            gam.secThreeAudioCounter = 500;
         }
 
         else if (SceneManager.GetActiveScene().name == "Section3Completed")

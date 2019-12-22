@@ -118,6 +118,21 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(ShowChangeColorText(1.6f));
         }
+
+        if (levelNumber < 10)
+        {
+            gam.secOneAudioCounter = 500;
+        }
+
+        else if (levelNumber > 9 && levelNumber < 19)
+        {
+            gam.secTwoAudioCounter = 500;
+        }
+
+        else if (levelNumber > 18)
+        {
+            gam.secThreeAudioCounter = 500;
+        }
     }
 
     // Update is called once per frame
