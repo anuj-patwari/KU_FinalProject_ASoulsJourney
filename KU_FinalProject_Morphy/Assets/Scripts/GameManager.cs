@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         //Setting the Get Key GameObject to the Goal Script
         goal = FindObjectOfType<Goal>();
         goal.getKeyText = invCount.getKeyText;
-        goal.getKeyText.GetComponent<Image>().enabled = false;
+        goal.getKeyText.GetComponent<Text>().enabled = false;
 
         placeAllPlatformsText = invCount.placeAllPlatformsText;                                         //Setting the Text of placing all platforms.
         placeAllPlatformsText.SetActive(false);
