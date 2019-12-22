@@ -66,44 +66,24 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (gm.levelNumber != 27)
+        if (col.gameObject.name == "Player")
         {
-            if (col.gameObject.name == "Player")
+            if (gm.hasKey == true)
             {
-                if (gm.hasKey == true)
+                changeLevel = 60;
+                StartCoroutine(DisablePlayerMovement(0.2f));
+                StartCoroutine(NextLevel(1));
+                if (gm.levelNumber > gam.levelsCompleted)
                 {
-                    changeLevel = 60;
-                    StartCoroutine(DisablePlayerMovement(0.2f));
-                    StartCoroutine(NextLevel(1));
-                    if(gm.levelNumber > gam.levelsCompleted)
-                    {
-                        gam.levelsCompleted = gm.levelNumber;
-                    }
-                    gam.SaveGame();
+                    gam.levelsCompleted = gm.levelNumber;
                 }
-
-                else if (gm.hasKey == false)
-                {
-                    getKeyText.GetComponent<Text>().enabled = true;
-                    StartCoroutine(DeactivateText(3));
-                }
+                gam.SaveGame();
             }
-        }
-        else if (gm.levelNumber == 27)
-        {
-            if (col.gameObject.name == "Player")
-            {
-                if (gm.hasKey == true)
-                {
-                    SceneManager.LoadScene("Credits");
-                    gam.SaveGame();
-                }
 
-                else if (gm.hasKey == false)
-                {
-                    getKeyText.GetComponent<Text>().enabled = true;
-                    StartCoroutine(DeactivateText(3));
-                }
+            else if (gm.hasKey == false)
+            {
+                getKeyText.GetComponent<Text>().enabled = true;
+                StartCoroutine(DeactivateText(3));
             }
         }
     }
