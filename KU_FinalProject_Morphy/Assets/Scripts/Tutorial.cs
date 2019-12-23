@@ -61,7 +61,7 @@ public class Tutorial : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Level5")
+        if (SceneManager.GetActiveScene().name == "Level6")
         {
             if (Input.GetKeyUp(KeyCode.Tab))
             {
@@ -73,7 +73,7 @@ public class Tutorial : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Level5")
+        if (SceneManager.GetActiveScene().name == "Level6")
         {
             if (Input.GetKeyUp(KeyCode.Tab) && prepPhaseText.activeInHierarchy && count == 1)
             {

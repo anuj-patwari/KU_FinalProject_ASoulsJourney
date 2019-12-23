@@ -39,11 +39,6 @@ public class GlobalAudioManager : MonoBehaviour
     {
         ReloadSavedGame();
         Application.targetFrameRate = 150;
-
-        if (SceneManager.GetActiveScene().name == "Section1Completed")
-        {
-            print("main menu");
-        }
     }
 
     // Update is called once per frame
