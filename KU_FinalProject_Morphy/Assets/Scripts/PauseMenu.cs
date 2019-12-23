@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
+    public Slider volumeSlider;
     GlobalAudioManager gam;
     GameManager gm;
 
@@ -17,26 +17,14 @@ public class PauseMenu : MonoBehaviour
         gam = FindObjectOfType<GlobalAudioManager>();
         gm = FindObjectOfType<GameManager>();
 
-        
+        //volumeSlider.GetComponent<Slider>().value = gam.masterVolume;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gm.levelNumber < 10)
-        {
-            volumeSlider.GetComponent<Slider>().value = gam.GetComponent<AudioSource>().volume;
-        }
-
-        else if (gm.levelNumber > 9 && gm.levelNumber < 19)
-        {
-            volumeSlider.GetComponent<Slider>().value = gam.sectionTwoAudio.GetComponent<AudioSource>().volume;
-        }
-
-        else if (gm.levelNumber > 18)
-        {
-            volumeSlider.GetComponent<Slider>().value = gam.sectionThreeAudio.GetComponent<AudioSource>().volume;
-        }
+        
     }
 
     public void AdjustVolume(float volume)
@@ -55,11 +43,13 @@ public class PauseMenu : MonoBehaviour
         {
             gam.sectionThreeAudio.GetComponent<AudioSource>().volume = volume;
         }
+        //gam.masterVolume = volumeSlider.GetComponent<Slider>().value;
     }
 
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        gam.masterVolume = volumeSlider.GetComponent<Slider>().value;
         SceneManager.LoadScene("MainMenu");
     }
 

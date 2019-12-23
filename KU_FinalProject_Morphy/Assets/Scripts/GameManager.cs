@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int levelNumber;
 
+    PauseMenu pm;
+
     [Tooltip("Type the name of the intended next level in this field. Do not forget to include that level into the Build Settings.")]
     public string nextLevel;
 
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
 
         gam = FindObjectOfType<GlobalAudioManager>();
         playerScript = FindObjectOfType<Player>();
+        pm = FindObjectOfType<PauseMenu>();
 
         startingCoordinates = player.transform.position;
         player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
@@ -237,11 +240,13 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;
             gam.SaveVolume();
+            gam.masterVolume = canvas.GetComponent<PauseMenu>().volumeSlider.GetComponent<Slider>().value;
         }
 
         else if (paused == false)
         {
             paused = true;
+            canvas.GetComponent<PauseMenu>().volumeSlider.GetComponent<Slider>().value = gam.masterVolume;
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }

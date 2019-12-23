@@ -13,6 +13,7 @@ public class GlobalAudioManager : MonoBehaviour
     public GameObject sectionTwoAudio;
     public GameObject sectionThreeAudio;
     [HideInInspector]public int secOneAudioCounter, secTwoAudioCounter, secThreeAudioCounter;
+    public float masterVolume;
 
 
     public int deaths;
@@ -58,7 +59,7 @@ public class GlobalAudioManager : MonoBehaviour
 
         if (secOneAudioCounter > 0)
         {
-            gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 1, Time.deltaTime);
+            gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, masterVolume, Time.deltaTime);
             sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
             sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
             secOneAudioCounter--;
@@ -67,7 +68,7 @@ public class GlobalAudioManager : MonoBehaviour
         if (secTwoAudioCounter > 0)
         {
             gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
-            sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 1, Time.deltaTime);
+            sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, masterVolume, Time.deltaTime);
             sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
             secTwoAudioCounter--;
         }
@@ -76,7 +77,7 @@ public class GlobalAudioManager : MonoBehaviour
         {
             gameObject.GetComponent<AudioSource>().volume = Mathf.Lerp(gameObject.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
             sectionTwoAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionTwoAudio.GetComponent<AudioSource>().volume, 0, Time.deltaTime);
-            sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, 0.6f, Time.deltaTime);
+            sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, masterVolume, Time.deltaTime);
             secThreeAudioCounter--;
         }
     }
@@ -107,6 +108,7 @@ public class GlobalAudioManager : MonoBehaviour
             levelsCompleted = data.levelsCompleted;
             deaths = data.deaths;
             gameObject.GetComponent<AudioSource>().volume = data.volume;
+            masterVolume = data.volume;
         }
     }
 
@@ -122,6 +124,7 @@ public class GlobalAudioManager : MonoBehaviour
             levelsCompleted = data.levelsCompleted;
             deaths = data.deaths;
             gameObject.GetComponent<AudioSource>().volume = data.volume;
+            masterVolume = data.volume;
 
             if (levelsCompleted == 0)
             {

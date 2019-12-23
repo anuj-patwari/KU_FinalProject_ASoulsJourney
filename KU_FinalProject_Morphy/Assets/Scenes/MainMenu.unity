@@ -2394,8 +2394,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sectionTwoAudio: {fileID: 1971213754}
   sectionThreeAudio: {fileID: 1980383892}
+  secOneAudioCounter: 0
   secTwoAudioCounter: 0
   secThreeAudioCounter: 0
+  masterVolume: 1
   deaths: 0
   levelsCompleted: 0
 --- !u!4 &1654075829
