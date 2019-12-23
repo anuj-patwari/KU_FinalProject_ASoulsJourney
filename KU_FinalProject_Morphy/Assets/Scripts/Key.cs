@@ -5,11 +5,13 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     GameManager gm;
+    Goal goal;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        goal = FindObjectOfType<Goal>();
         Player.PlayerDied.AddListener(OnPlayerDied);
     }
 
@@ -26,6 +28,7 @@ public class Key : MonoBehaviour
             gm.hasKey = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            goal.GetComponent<Animator>().enabled = true;
         }
     }
 

@@ -39,6 +39,7 @@ public class Goal : MonoBehaviour
         else if (gm.hasKey == false)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = keyRequired;
+            gameObject.GetComponent<Animator>().enabled = false;
         }
     }
 
