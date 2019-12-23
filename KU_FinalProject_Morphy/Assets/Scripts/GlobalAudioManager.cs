@@ -83,7 +83,7 @@ public class GlobalAudioManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            levelsCompleted = 26;
+            levelsCompleted = 27;
             SaveGame();
             print("hax");
         }
@@ -97,7 +97,7 @@ public class GlobalAudioManager : MonoBehaviour
 
         data.levelsCompleted = levelsCompleted;
         data.deaths = deaths;
-        data.volume = gameObject.GetComponent<AudioSource>().volume;
+        data.volume = masterVolume;
 
         bf.Serialize(file, data);
         file.Close();
@@ -194,7 +194,7 @@ public class GlobalAudioManager : MonoBehaviour
 
         data.levelsCompleted = levelsCompleted;
         data.deaths = deaths;
-        data.volume = gameObject.GetComponent<AudioSource>().volume;
+        data.volume = masterVolume;
 
         bf.Serialize(file, data);
         file.Close();

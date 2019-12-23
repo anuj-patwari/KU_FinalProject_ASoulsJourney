@@ -52,13 +52,13 @@ public class IntroSceneStory : MonoBehaviour
     IEnumerator SwitchToLevelTen(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Level10");
+        SceneManager.LoadScene("Level11");
     }
 
     IEnumerator SwitchToLevelNineteen(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Level19");
+        SceneManager.LoadScene("Level20");
     }
 
     IEnumerator SwitchToCredits(float delay)

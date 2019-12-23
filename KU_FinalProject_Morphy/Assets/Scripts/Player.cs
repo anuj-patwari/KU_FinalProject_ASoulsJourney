@@ -36,22 +36,22 @@ public class Player : MonoBehaviour
         runSpeed = 20f;
 
 
-        if (gm.levelNumber < 10)
+        if (gm.levelNumber < 11)
         {
             playerColor = 1;
         }
-        else if (gm.levelNumber > 10 && gm.levelNumber < 19)
+        else if (gm.levelNumber > 11 && gm.levelNumber < 20)
         {
             gameObject.GetComponent<SpriteRenderer>().color = c2;
             playerColor = 2;
         }
-        else if (gm.levelNumber > 19)
+        else if (gm.levelNumber > 20)
         {
             playerColor = 3;
             gameObject.GetComponent<SpriteRenderer>().color = c3;
         }
 
-        if (gm.levelNumber == 10)
+        if (gm.levelNumber == 11)
         {
             gameObject.GetComponent<SpriteRenderer>().color = c1;
             gameObject.GetComponent<CharacterController2D>().enabled = false;
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             StartCoroutine(Level10Animation(1.6f)); 
         }
 
-        if (gm.levelNumber == 19)
+        if (gm.levelNumber == 20)
         {
             gameObject.GetComponent<SpriteRenderer>().color = c2;
             gameObject.GetComponent<CharacterController2D>().enabled = false;
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         {
             if (gm.prepPhase == false)
             {
-                if (gm.levelNumber > 9 && gm.levelNumber <= 18)
+                if (gm.levelNumber > 10 && gm.levelNumber <= 19)
                 {
                     if (playerColor == 1)
                     {
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                else if (gm.levelNumber > 18)
+                else if (gm.levelNumber > 19)
                 {
                     if (playerColor == 1)
                     {
@@ -154,17 +154,17 @@ public class Player : MonoBehaviour
 
 
         //Setting player's initial color based on what that level's starting color is.
-        if (gm.levelNumber < 10)
+        if (gm.levelNumber < 11)
         {
             playerColor = 1;
             gameObject.GetComponent<SpriteRenderer>().color = c1;
         }
-        else if (gm.levelNumber >= 10 && gm.levelNumber < 19)
+        else if (gm.levelNumber >= 11 && gm.levelNumber < 20)
         {
             gameObject.GetComponent<SpriteRenderer>().color = c2;
             playerColor = 2;
         }
-        else if (gm.levelNumber > 18)
+        else if (gm.levelNumber > 19)
         {
             playerColor = 3;
             gameObject.GetComponent<SpriteRenderer>().color = c3;

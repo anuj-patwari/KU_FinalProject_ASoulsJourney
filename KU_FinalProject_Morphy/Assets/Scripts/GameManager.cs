@@ -117,22 +117,22 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
 
 
-        if (levelNumber == 10 || levelNumber == 19)
+        if (levelNumber == 11 || levelNumber == 20)
         {
             StartCoroutine(ShowChangeColorText(1.6f));
         }
 
-        if (levelNumber < 10)
+        if (levelNumber < 11)
         {
             gam.secOneAudioCounter = 500;
         }
 
-        else if (levelNumber > 9 && levelNumber < 19)
+        else if (levelNumber > 10 && levelNumber < 20)
         {
             gam.secTwoAudioCounter = 500;
         }
 
-        else if (levelNumber > 18)
+        else if (levelNumber > 19)
         {
             gam.secThreeAudioCounter = 500;
         }
@@ -161,13 +161,13 @@ public class GameManager : MonoBehaviour
             {
                 StartPrepPhase();
 
-                if (levelNumber > 9 && levelNumber <= 18)
+                if (levelNumber > 11 && levelNumber <= 20)
                 {
                     playerScript.playerColor = 2;
                     player.GetComponent<SpriteRenderer>().color = playerScript.c2;
                 }
 
-                else if (levelNumber > 18)
+                else if (levelNumber > 20)
                 {
                     playerScript.playerColor = 3;
                     player.GetComponent<SpriteRenderer>().color = playerScript.c3;
@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
             PauseGame();
         }
 
-        if(levelNumber == 10)
+        if(levelNumber == 11)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {

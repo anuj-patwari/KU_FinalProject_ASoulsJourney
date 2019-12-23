@@ -29,17 +29,17 @@ public class PauseMenu : MonoBehaviour
 
     public void AdjustVolume(float volume)
     {
-        if (gm.levelNumber < 10)
+        if (gm.levelNumber < 11)
         {
             gam.GetComponent<AudioSource>().volume = volume;
         }
 
-        else if (gm.levelNumber > 9 && gm.levelNumber < 19)
+        else if (gm.levelNumber > 10 && gm.levelNumber < 20)
         {
             gam.sectionTwoAudio.GetComponent<AudioSource>().volume = volume;
         }
 
-        else if (gm.levelNumber > 18)
+        else if (gm.levelNumber > 19)
         {
             gam.sectionThreeAudio.GetComponent<AudioSource>().volume = volume;
         }

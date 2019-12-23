@@ -8,7 +8,7 @@ public class LevelSelectManager : MonoBehaviour
 {
     GlobalAudioManager gam;
 
-    [SerializeField] GameObject lvl1Button, lvl2Button, lvl3Button, lvl4Button, lvl5Button, lvl6Button, lvl7Button, lvl8Button, lvl9Button, lvl10Button, lvl11Button, lvl12Button, lvl13Button, lvl14Button, lvl15Button, lvl16Button, lvl17Button, lvl18Button, lvl19Button, lvl20Button, lvl21Button, lvl22Button, lvl23Button, lvl24Button, lvl25Button, lvl26Button, lvl27Button;
+    [SerializeField] GameObject lvl1Button, lvl2Button, lvl3Button, lvl4Button, lvl5Button, lvl6Button, lvl7Button, lvl8Button, lvl9Button, lvl10Button, lvl11Button, lvl12Button, lvl13Button, lvl14Button, lvl15Button, lvl16Button, lvl17Button, lvl18Button, lvl19Button, lvl20Button, lvl21Button, lvl22Button, lvl23Button, lvl24Button, lvl25Button, lvl26Button, lvl27Button, lvl28Button;
 
     // Start is called before the first frame update
     void Start()
@@ -143,6 +143,11 @@ public class LevelSelectManager : MonoBehaviour
         if (gam.levelsCompleted > 25)
         {
             lvl27Button.GetComponent<Button>().interactable = true;
+        }
+
+        if (gam.levelsCompleted > 26)
+        {
+            lvl28Button.GetComponent<Button>().interactable = true;
         }
     }
 
