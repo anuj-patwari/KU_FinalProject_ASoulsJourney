@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Return))
         {
             if (gm.prepPhase == false)
             {

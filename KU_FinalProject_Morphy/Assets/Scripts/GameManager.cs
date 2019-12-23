@@ -103,6 +103,10 @@ public class GameManager : MonoBehaviour
         fastPlatformCountText.GetComponent<Text>().text = fastPlatformCount.ToString();
 
 
+        //Setting the Level Number Text
+        invCount.levelNumberText.GetComponent<Text>().text = "Level: " + levelNumber;
+
+
         //Setting the Get Key GameObject to the Goal Script
         goal = FindObjectOfType<Goal>();
         goal.getKeyText = invCount.getKeyText;
@@ -182,7 +186,7 @@ public class GameManager : MonoBehaviour
 
         if(levelNumber == 11)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Return))
             {
                 if (!prepPhase)
                 {
@@ -201,7 +205,7 @@ public class GameManager : MonoBehaviour
 
 
         invCount.deathCounter.GetComponent<Text>().color = invCount.c2;                                                                //Setting Death counter text to White
-        invCount.levelNumberText.GetComponent<Image>().color = invCount.c2;                                                          //Setting Level Number text to White
+        invCount.levelNumberText.GetComponent<Text>().color = invCount.c2;                                                             //Setting Level Number text to White
     }
 
     public void StartPrepPhase()
@@ -224,7 +228,7 @@ public class GameManager : MonoBehaviour
         }
         
         invCount.deathCounter.GetComponent<Text>().color = invCount.c1;                                                                //Setting Death counter text to Blue
-        invCount.levelNumberText.GetComponent<Image>().color = invCount.c1;                                                          //Setting Level Number text to Blue
+        invCount.levelNumberText.GetComponent<Text>().color = invCount.c1;                                                             //Setting Level Number text to Blue
     }
 
     public void BackToMainMenu()
