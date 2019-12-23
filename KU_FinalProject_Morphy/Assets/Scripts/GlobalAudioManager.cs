@@ -80,6 +80,13 @@ public class GlobalAudioManager : MonoBehaviour
             sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, masterVolume, Time.deltaTime);
             secThreeAudioCounter--;
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            levelsCompleted = 26;
+            SaveGame();
+            print("hax");
+        }
     }
     public void SaveGame()
     {
