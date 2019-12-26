@@ -33,6 +33,7 @@ public class RemoveFastPlatform : MonoBehaviour
             gm.platformIDNumber = 0;
             gm.fastPlatformCount = gm.fastPlatformCount + 1;
             gm.fastPlatformCountText.GetComponent<Text>().text = gm.fastPlatformCount.ToString();
+            ClickablePlatformDefiner.PlatformPlaced.Invoke();
         }
 
     }

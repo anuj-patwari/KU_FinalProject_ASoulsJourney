@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ClickablePlatformDefiner : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ClickablePlatformDefiner : MonoBehaviour
     [SerializeField] GameObject fastPlatform;
 
     GameManager gm;
+
+    public static UnityEvent PlatformPlaced = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +51,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             rotatingPlatform.GetComponent<RotatingPlatform>().placed = true;
             gm.rotatingPlatformCount = gm.rotatingPlatformCount - 1;
             gm.rotatingPlatformCountText.GetComponent<Text>().text = gm.rotatingPlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
         if (gm.platformIDNumber == 2 && gm.gravityPlatformCount > 0)
@@ -59,6 +63,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             gravityPlatform.GetComponent<pCheckGravityPlatform>().placed = true;
             gm.gravityPlatformCount = gm.gravityPlatformCount - 1;
             gm.gravityPlatformCountText.GetComponent<Text>().text = gm.gravityPlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
         if (gm.platformIDNumber == 3 && gm.jumpPlatformCount > 0)
@@ -70,6 +75,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             jumpPlatform.GetComponent<JumpPlatform>().placed = true;
             gm.jumpPlatformCount = gm.jumpPlatformCount - 1;
             gm.jumpPlatformCountText.GetComponent<Text>().text = gm.jumpPlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
         if (gm.platformIDNumber == 4 && gm.purplePlatformCount > 0)
@@ -81,6 +87,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             purplePlatform.GetComponent<ColouredPlatforms>().placed = true;
             gm.purplePlatformCount = gm.purplePlatformCount - 1;
             gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
         if (gm.platformIDNumber == 5 && gm.pinkPlatformCount > 0)
@@ -92,6 +99,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             pinkPlatform.GetComponent<ColouredPlatforms>().placed = true;
             gm.pinkPlatformCount = gm.pinkPlatformCount - 1;
             gm.pinkPlatformCountText.GetComponent<Text>().text = gm.pinkPlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
         if (gm.platformIDNumber == 6 && gm.fastPlatformCount > 0)
@@ -103,6 +111,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             fastPlatform.GetComponent<pCheckFastPlatform>().placed = true;
             gm.fastPlatformCount = gm.fastPlatformCount - 1;
             gm.fastPlatformCountText.GetComponent<Text>().text = gm.fastPlatformCount.ToString();
+            PlatformPlaced.Invoke();
         }
 
     }

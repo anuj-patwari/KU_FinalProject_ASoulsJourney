@@ -33,6 +33,7 @@ public class RemoveGravityPlatform : MonoBehaviour
             gm.platformIDNumber = 0;
             gm.gravityPlatformCount = gm.gravityPlatformCount + 1;
             gm.gravityPlatformCountText.GetComponent<Text>().text = gm.gravityPlatformCount.ToString();
+            ClickablePlatformDefiner.PlatformPlaced.Invoke();
         }
 
     }

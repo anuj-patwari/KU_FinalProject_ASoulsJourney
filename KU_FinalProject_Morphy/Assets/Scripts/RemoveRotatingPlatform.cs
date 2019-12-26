@@ -34,6 +34,7 @@ public class RemoveRotatingPlatform : MonoBehaviour
             gm.platformIDNumber = 0;
             gm.rotatingPlatformCount = gm.rotatingPlatformCount + 1;
             gm.rotatingPlatformCountText.GetComponent<Text>().text = gm.rotatingPlatformCount.ToString();
+            ClickablePlatformDefiner.PlatformPlaced.Invoke();
         }
 
     }

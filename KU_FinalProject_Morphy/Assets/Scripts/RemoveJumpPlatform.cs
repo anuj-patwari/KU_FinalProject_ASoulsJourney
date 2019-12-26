@@ -33,6 +33,7 @@ public class RemoveJumpPlatform : MonoBehaviour
             gm.platformIDNumber = 0;
             gm.jumpPlatformCount = gm.jumpPlatformCount + 1;
             gm.jumpPlatformCountText.GetComponent<Text>().text = gm.jumpPlatformCount.ToString();
+            ClickablePlatformDefiner.PlatformPlaced.Invoke();
         }
 
     }

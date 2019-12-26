@@ -35,6 +35,7 @@ public class RemoveColoredPlatform : MonoBehaviour
                 gm.platformIDNumber = 0;
                 gm.purplePlatformCount = gm.purplePlatformCount + 1;
                 gm.purplePlatformCountText.GetComponent<Text>().text = gm.purplePlatformCount.ToString();
+                ClickablePlatformDefiner.PlatformPlaced.Invoke();
             }
 
             else if (platform.GetComponent<ColouredPlatforms>().platformColor == 3)
@@ -45,6 +46,7 @@ public class RemoveColoredPlatform : MonoBehaviour
                 gm.platformIDNumber = 0;
                 gm.pinkPlatformCount = gm.pinkPlatformCount + 1;
                 gm.pinkPlatformCountText.GetComponent<Text>().text = gm.pinkPlatformCount.ToString();
+                ClickablePlatformDefiner.PlatformPlaced.Invoke();
             }
         }
 
