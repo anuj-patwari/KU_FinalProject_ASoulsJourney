@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
             PauseGame();
         }
 
-        if(levelNumber == 11)
+        if(levelNumber == 11 || levelNumber == 20)
         {
             if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Return))
             {
