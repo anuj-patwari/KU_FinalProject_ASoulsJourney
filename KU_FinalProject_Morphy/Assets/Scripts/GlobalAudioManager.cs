@@ -79,6 +79,7 @@ public class GlobalAudioManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             levelsCompleted = 27;
+            deaths = 0;
             SaveGame();
             print("hax");
         }
