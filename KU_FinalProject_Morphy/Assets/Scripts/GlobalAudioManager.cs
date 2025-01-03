@@ -44,13 +44,21 @@ public class GlobalAudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Delete))
+        /*if (Input.GetKeyDown(KeyCode.Delete))                                                 //Deletes Save File.
         {
             if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
             {
                 File.Delete(Application.persistentDataPath + "/playerInfo.dat");
             }
         }
+        
+        if (Input.GetKeyDown(KeyCode.H))                                                        //Unlocks all Levels.
+        {
+            levelsCompleted = 27;
+            deaths = 0;
+            SaveGame();
+            print("hax");
+        }*/
 
         if (secOneAudioCounter > 0)
         {
@@ -76,14 +84,6 @@ public class GlobalAudioManager : MonoBehaviour
             sectionThreeAudio.GetComponent<AudioSource>().enabled = true;
             sectionThreeAudio.GetComponent<AudioSource>().volume = Mathf.Lerp(sectionThreeAudio.GetComponent<AudioSource>().volume, masterVolume, Time.deltaTime);
             secThreeAudioCounter--;
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            levelsCompleted = 27;
-            deaths = 0;
-            SaveGame();
-            print("hax");
         }
     }
     public void SaveGame()
