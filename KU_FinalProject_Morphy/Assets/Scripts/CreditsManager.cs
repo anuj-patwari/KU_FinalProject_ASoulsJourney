@@ -52,24 +52,20 @@ public class CreditsManager : MonoBehaviour
     public void FollowMeOnlineButtonClicked()
     {
         Application.OpenURL("https://www.anujpatwari.com/links");
-        print("All hail Social Media!");
     }
 
     public void GrumpyBilliButtonClicked()
     {
         Application.OpenURL("https://www.youtube.com/@GrumpyBilliGaming");
-        print("Billi bhaiya!!");
     }
 
     public void OneUpGameDevButtonClicked()
     {
         Application.OpenURL("https://www.youtube.com/@OneUpGameDev");
-        print("OneUp boiii!!");
     }
 
     public void WebsiteButtonClicked()
     {
         Application.OpenURL("https://www.anujpatwari.com");
-        print("Website opened!");
     }
 }
