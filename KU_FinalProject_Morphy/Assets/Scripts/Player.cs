@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     float horizontalMove = 0f;
 
+    public GameObject deathParticles;
+
     public float runSpeed = 20f;
     public bool hasLeftFPCollision = false;
     public IEnumerator stopBackToFalse;
@@ -148,6 +150,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        StartCoroutine(PlayerDeathAnimation(3f));
         gam.deaths++;
         gam.SaveGame();
         PlayerDied.Invoke();
@@ -169,6 +172,12 @@ public class Player : MonoBehaviour
             playerColor = 3;
             gameObject.GetComponent<SpriteRenderer>().color = c3;
         }
+    }
+
+    IEnumerator PlayerDeathAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        deathParticles.SetActive(false);
     }
 
     IEnumerator Level10Animation(float delay)

@@ -24,6 +24,8 @@ public class Spikes : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
+            col.gameObject.GetComponent<Player>().deathParticles.SetActive(true);
+            col.gameObject.GetComponent<Player>().deathParticles.transform.parent = col.gameObject.GetComponent<Player>().transform.parent;
             col.gameObject.transform.position = gm.startingCoordinates;
             col.gameObject.GetComponent<Rigidbody2D>().gravityScale = gm.currentLevelStartingGravity;
             col.gameObject.GetComponent<Player>().runSpeed = 20f;
