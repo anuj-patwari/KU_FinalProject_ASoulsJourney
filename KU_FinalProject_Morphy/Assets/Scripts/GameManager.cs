@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         if (paused == true)
         {

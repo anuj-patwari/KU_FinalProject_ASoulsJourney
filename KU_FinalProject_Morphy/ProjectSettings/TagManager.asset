@@ -38,6 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Layer2
+    uniqueID: 3344969135
+    locked: 0
+  - name: Layer1
+    uniqueID: 2883504345
+    locked: 0
+  - name: Player
+    uniqueID: 101829371
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Interactables
+    uniqueID: 3621653895
+    locked: 0
+  - name: Layer0
+    uniqueID: 2357511257
+    locked: 0
+  - name: Layer-1
+    uniqueID: 3258753929
+    locked: 0
+  - name: Layer-2
+    uniqueID: 1765080469
     locked: 0
