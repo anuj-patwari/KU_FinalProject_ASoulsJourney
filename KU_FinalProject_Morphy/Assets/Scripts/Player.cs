@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 
     float horizontalMove = 0f;
 
+    public GameObject trailParticlesWhite;
+    public GameObject trailParticlesPurple;
+    public GameObject trailParticlesPink;
     public GameObject deathParticles;
 
     public float runSpeed = 20f;
@@ -133,6 +136,27 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (playerColor == 1)
+        {
+            trailParticlesWhite.SetActive(true);
+            trailParticlesPurple.SetActive(false);
+            trailParticlesPink.SetActive(false);
+        }
+
+        else if (playerColor == 2)
+        {
+            trailParticlesWhite.SetActive(false);
+            trailParticlesPurple.SetActive(true);
+            trailParticlesPink.SetActive(false);
+        }
+
+        else if (playerColor == 3)
+        {
+            trailParticlesWhite.SetActive(false);
+            trailParticlesPurple.SetActive(false);
+            trailParticlesPink.SetActive(true);
         }
     }
 
